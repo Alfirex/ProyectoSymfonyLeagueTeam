@@ -1,0 +1,12 @@
+juegos_homepage:
+    path:     /
+    defaults: { _controller: JuegosBundle:Default:index }
+juegos_ListarEquipos:
+    path:     /Listar_Equipos
+    defaults: { _controller: JuegosBundle:Default:ListarEquipos }
+juegos_Equipos:
+    path:     /Equipos
+    defaults: { _controller: JuegosBundle:Default:Equipo }
+juegos_infoequipo:
+    path:     /Equipos/infoequipo
+    defaults: { _controller: JuegosBundle:Default:infoequipo }
