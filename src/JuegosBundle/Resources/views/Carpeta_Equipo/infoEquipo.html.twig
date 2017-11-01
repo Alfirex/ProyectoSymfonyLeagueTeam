@@ -1,12 +1,14 @@
 {% extends '::base.html.twig' %}
 {% block body %}
-  <br>
-  <h3>Equipo : Titan</h3>
-  <h4>Juego: Laegue of legend</h4>
-  <h4>Ranking: Platino 4</h4>
-  <h4>Integrantes: 5</h4>
-  <img src="" alt="">
+
+  {% for fila in TablainfoEquipos %}
+  <h3>Equipo : {{ fila.nombre }}</h3>
+  <h4>Juego: {{ fila.Juego }}</h4>
+  <h4>Ranking: {{ fila.ranking }}</h4>
+  <h4>Integrantes:{{ fila.integrantes }}</h4>
+  <img src="{{ asset( fila.foto ) }}" width="300" height="200" alt="">
   <hr>
+  {% endfor %}
   <h3>Integrantes:</h3>
 
   <div class="gallery">

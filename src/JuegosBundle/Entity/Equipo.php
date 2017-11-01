@@ -49,6 +49,12 @@ class Equipo
      */
     private $integrantes;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="foto", type="string", length=255)
+     */
+    private $foto;
 
     /**
      * Get id
@@ -155,5 +161,28 @@ class Equipo
     {
         return $this->integrantes;
     }
-}
 
+    /**
+     * Set foto
+     *
+     * @param string $foto
+     *
+     * @return Equipo
+     */
+    public function setFoto($foto)
+    {
+        $this->foto = $foto;
+
+        return $this;
+    }
+
+    /**
+     * Get foto
+     *
+     * @return string
+     */
+    public function getFoto()
+    {
+        return $this->foto;
+    }
+}

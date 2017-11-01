@@ -4,9 +4,11 @@ juegos_homepage:
 juegos_ListarEquipos:
     path:     /Listar_Equipos
     defaults: { _controller: JuegosBundle:Default:ListarEquipos }
-juegos_Equipos:
+
+
+Equipo_todosLosEquipos:
     path:     /Equipos
-    defaults: { _controller: JuegosBundle:Default:Equipo }
-juegos_infoequipo:
-    path:     /Equipos/infoequipo
-    defaults: { _controller: JuegosBundle:Default:infoequipo }
+    defaults: { _controller: JuegosBundle:Equipo:todosLosEquipos }
+Equipo_infoequipo:
+    path:     /Equipos/infoequipo/{id}
+    defaults: { _controller: JuegosBundle:Equipo:infoequipo}
