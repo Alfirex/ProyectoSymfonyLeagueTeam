@@ -17,7 +17,7 @@ class EquipoController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository('JuegosBundle:Equipo');
         // find *all* infoequipos
-        $infoequipos = $repository->findById($id);
+        $infoequipos = $repository->find($id);
         return $this->render('JuegosBundle:Carpeta_Equipo:infoEquipo.html.twig',array('TablainfoEquipos' => $infoequipos ));
     }
 }

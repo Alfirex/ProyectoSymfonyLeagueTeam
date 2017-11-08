@@ -192,45 +192,4 @@ class Equipo
     {
         return $this->foto;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->jugador = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add jugador
-     *
-     * @param \JuegosBundle\Entity\Jugador $jugador
-     *
-     * @return Equipo
-     */
-    public function addJugador(\JuegosBundle\Entity\Jugador $jugador)
-    {
-        $this->jugador[] = $jugador;
-
-        return $this;
-    }
-
-    /**
-     * Remove jugador
-     *
-     * @param \JuegosBundle\Entity\Jugador $jugador
-     */
-    public function removeJugador(\JuegosBundle\Entity\Jugador $jugador)
-    {
-        $this->jugador->removeElement($jugador);
-    }
-
-    /**
-     * Get jugador
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getJugador()
-    {
-        return $this->jugador;
-    }
 }

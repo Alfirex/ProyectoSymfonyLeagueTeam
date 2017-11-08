@@ -11,4 +11,4 @@ Equipo_todosLosEquipos:
     defaults: { _controller: JuegosBundle:Equipo:todosLosEquipos }
 Equipo_infoequipo:
     path:     /Equipos/infoequipo/{id}
-    defaults: { _controller: JuegosBundle:Equipo:infoequipo}
+    defaults: { _controller: JuegosBundle:Equipo:infoequipo }

@@ -1,55 +1,26 @@
 {% extends '::base.html.twig' %}
 {% block body %}
 
-  {% for fila in TablainfoEquipos %}
-  <h3>Equipo : {{ fila.nombre }}</h3>
-  <h4>Juego: {{ fila.Juego }}</h4>
-  <h4>Ranking: {{ fila.ranking }}</h4>
-  <h4>Integrantes:{{ fila.integrantes }}</h4>
-  <img src="{{ asset( fila.foto ) }}" width="300" height="200" alt="">
+
+  <h3>Equipo : {{ TablainfoEquipos.nombre }}</h3>
+  <h4>Juego: {{ TablainfoEquipos.Juego }}</h4>
+  <h4>Ranking: {{ TablainfoEquipos.ranking }}</h4>
+  <h4>Integrantes:{{ TablainfoEquipos.integrantes }}</h4>
+  <img src="{{ asset( TablainfoEquipos.foto ) }}" width="300" height="200" alt="">
   <hr>
-  {% endfor %}
+
   <h3>Integrantes:</h3>
+{% for filaJugador in TablainfoEquipos.jugador %}
+
 
   <div class="gallery">
       <img src="" alt="Mntains" width="600" height="400">
     <div class="desc">
-      <h3>Raul</h3>
-      <h5>NickName:Golfos</h5>
+      <h3>Nombre: {{ filaJugador.nombre }}</h3>
+      <h5>Apellidos:{{ filaJugador.nombre }}</h5>
       <h5>Especialidad: Support</h5>
     </div>
   </div>
-  <div class="gallery">
-      <img src="" alt="Mntains" width="600" height="400">
-    <div class="desc">
-      <h3>Raul</h3>
-      <h5>NickName:Golfos</h5>
-      <h5>Especialidad: Support</h5>
-    </div>
-  </div>
-  <div class="gallery">
-      <img src="" alt="Mntains" width="600" height="400">
-    <div class="desc">
-      <h3>Raul</h3>
-      <h5>NickName:Golfos</h5>
-      <h5>Especialidad: Support</h5>
-    </div>
-  </div>
-  <div class="gallery">
-      <img src="" alt="Mntains" width="600" height="400">
-    <div class="desc">
-      <h3>Raul</h3>
-      <h5>NickName:Golfos</h5>
-      <h5>Especialidad: Support</h5>
-    </div>
-  </div>
-  <div class="gallery">
-      <img src="" alt="Mntains" width="600" height="400">
-    <div class="desc">
-      <h3>Raul</h3>
-      <h5>NickName:Golfos</h5>
-      <h5>Especialidad: Support</h5>
-    </div>
-  </div>
+{% endfor %}
   <br>
 {% endblock %}
