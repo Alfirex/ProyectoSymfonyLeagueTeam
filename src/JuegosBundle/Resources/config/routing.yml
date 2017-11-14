@@ -12,3 +12,12 @@ Equipo_todosLosEquipos:
 Equipo_infoequipo:
     path:     /Equipos/infoequipo/{id}
     defaults: { _controller: JuegosBundle:Equipo:infoequipo }
+Equipo_Crear:
+    path:     /Equipos/crear
+    defaults: { _controller: JuegosBundle:Equipo:crearEquipo }
+Equipo_Actualizar:
+    path:     /Equipos/actualizar/{id}
+    defaults: { _controller: JuegosBundle:Equipo:actualizarEquipo }
+Equipo_Eliminar:
+    path:     /Equipos/eliminar/{id}
+    defaults: { _controller: JuegosBundle:Equipo:eliminarEquipo }
