@@ -6,19 +6,22 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Shootngo\CoreBundle\Entity\UserCategory;
 
-class EquipoType extends AbstractType
+class JugadorType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nombre')
+        $builder->add('usuario')
+                ->add('nombre')
+                ->add('apellidos')
                 ->add('juego')
-                ->add('ranking')
-                ->add('integrantes')
-                ->add('foto')
+                ->add('especializacion')
+                ->add('edad')
+                
                 ->add($options['boton_enviar'],SubmitType::class);
     }
 
@@ -28,7 +31,7 @@ class EquipoType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'JuegosBundle\Entity\Equipo',
+            'data_class' => 'JuegosBundle\Entity\Jugador',
             'boton_enviar' => 'Enviar'
         ));
     }
@@ -38,7 +41,7 @@ class EquipoType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'juegosbundle_equipo';
+        return 'juegosbundle_jugador';
     }
 
 

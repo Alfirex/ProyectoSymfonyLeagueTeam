@@ -233,4 +233,5 @@ class Equipo
     {
         return $this->jugador;
     }
+
 }

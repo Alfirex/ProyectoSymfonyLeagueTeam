@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+  <br>
+  <h3>Listado de los Ultimos partidos por Juego</h3>
+  <br><br>
+  <select class="" name="">
+    <option value="*">Todos los Juegos</option>
+    <option value="Overwath">Overwath</option>
+    <option value="HOST">Heroes Of The Storm</option>
+    <option value="lol">League of Legends</option>
+    <option value="Dota">Dota 2</option>
+  </select>
+  <hr>
+ <table class="table table-striped table-inverse">
+   <tr>
+     <th><input type="text" name="" value="" placeholder="Usuario"></th>
+     <th><input type="text" name="" value="" placeholder="Equipo"></th>
+     <th>Edad</th>
+     <th>Especializacion</th>
+     <th>Juego</th>
+   </tr>
+   {% for fila in TablaJugadores %}
+     <tr>
+       <td>{{ fila.usuario }}</a></td>
+       <td>{{ fila.edad }}</td>
+       <td>{{ fila.especializacion }}</td>
+       <td>{{ fila.juego }}</td>
+     </tr>
+  {% endfor %}
+ </table>
+{% endblock %}
