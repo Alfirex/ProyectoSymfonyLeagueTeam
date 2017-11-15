@@ -19,6 +19,7 @@ class EquipoType extends AbstractType
                 ->add('ranking')
                 ->add('integrantes')
                 ->add('foto')
+                ->add('jugador')
                 ->add($options['boton_enviar'],SubmitType::class);
     }
 

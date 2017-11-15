@@ -62,7 +62,6 @@ class EquipoController extends Controller
     }
     public function eliminarEquipoAction($id)
     {
-
             $DB = $this->getDoctrine()->getManager();
             $eliminar = $DB->getRepository('JuegosBundle:Equipo')->find($id);
 

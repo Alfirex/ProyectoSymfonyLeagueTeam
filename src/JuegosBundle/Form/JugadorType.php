@@ -6,7 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Shootngo\CoreBundle\Entity\UserCategory;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
 
 class JugadorType extends AbstractType
 {
@@ -21,7 +22,7 @@ class JugadorType extends AbstractType
                 ->add('juego')
                 ->add('especializacion')
                 ->add('edad')
-                
+                ->add('equipo',EntityType::class,array('class'=>'JuegosBundle:Equipo'))
                 ->add($options['boton_enviar'],SubmitType::class);
     }
 
