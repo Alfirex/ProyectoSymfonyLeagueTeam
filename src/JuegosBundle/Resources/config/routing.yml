@@ -14,19 +14,19 @@ Equipo_infoequipo:
     path:     /Equipos/infoequipo/{id}
     defaults: { _controller: JuegosBundle:Equipo:infoequipo }
 Equipo_Crear:
-    path:     /Equipos/crear
+    path:     /CUD/Equipos/crear
     defaults: { _controller: JuegosBundle:Equipo:crearEquipo }
 Equipo_Actualizar:
-    path:     /Equipos/actualizar/{id}
+    path:     /CUD/Equipos/actualizar/{id}
     defaults: { _controller: JuegosBundle:Equipo:actualizarEquipo }
 Equipo_Eliminar:
-    path:     /Equipos/eliminar/{id}
+    path:     /CUD/Equipos/eliminar/{id}
     defaults: { _controller: JuegosBundle:Equipo:eliminarEquipo }
 
 # Jugador
 Jugador_todosLosJugadores:
-    path:     /Jugadores
+    path:     /CUD/Jugadores
     defaults: { _controller: JuegosBundle:Jugador:todosLosJugadores }
 Jugador_Crear:
-    path:     /Jugadores/crear
+    path:     /CUD/Jugadores/crear
     defaults: { _controller: JuegosBundle:Jugador:crearJugador }

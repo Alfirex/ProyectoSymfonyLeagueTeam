@@ -1,20 +1,40 @@
 # To get started with security, check out the documentation:
 # https://symfony.com/doc/current/security.html
 security:
-
+    encoders:
+        UsuariosBundle\Entity\usuarios: bcrypt
+        Symfony\Component\Security\Core\User\User: plaintext
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         in_memory:
-            memory: ~
+            memory:
+                users:
+                    admin:
+                        password: 1234
+                        roles: 'ROLE_ADMIN'
+
+    access_control:
+    - { path: ^/usuarios/admin, roles: ROLE_ADMIN }
+    - { path: ^/CUD, roles: ROLE_ADMIN }
+    - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
-        main:
+        usuarios:
+            pattern: ^/
             anonymous: ~
+            provider: in_memory
+            form_login:
+                login_path: /usuarios/login
+                check_path: /usuarios/login
+        admin:
+            pattern: ^/usuarios/admin
+            http_basic: ~
+
             # activate different ways to authenticate
 
             # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate

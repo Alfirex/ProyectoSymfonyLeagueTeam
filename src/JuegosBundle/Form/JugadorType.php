@@ -22,7 +22,7 @@ class JugadorType extends AbstractType
                 ->add('juego')
                 ->add('especializacion')
                 ->add('edad')
-                ->add('equipo',EntityType::class,array('class'=>'JuegosBundle:Equipo'))
+                ->add('equipo')
                 ->add($options['boton_enviar'],SubmitType::class);
     }
 
