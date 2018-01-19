@@ -23,7 +23,7 @@ class usuariosController extends Controller
      */
     public function usuariosAction()
     {
-        return $this->render('tapasBundle:Carpeta_Tapas:index.html.twig');
+        return $this->render('UsuariosBundle:Default:index.html.twig');
     }
 
     /**

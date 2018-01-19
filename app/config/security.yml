@@ -17,6 +17,7 @@ security:
     - { path: ^/usuarios/admin, roles: ROLE_ADMIN }
     - { path: ^/CUD, roles: ROLE_ADMIN }
     - { path: ^/, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    
 
 
     firewalls:
@@ -31,6 +32,9 @@ security:
             form_login:
                 login_path: /usuarios/login
                 check_path: /usuarios/login
+            logout:
+                path:   /usuarios/logout
+                target: /usuarios
         admin:
             pattern: ^/usuarios/admin
             http_basic: ~
