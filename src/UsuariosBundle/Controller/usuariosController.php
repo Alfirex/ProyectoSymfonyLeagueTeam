@@ -25,6 +25,28 @@ class usuariosController extends Controller
     {
         return $this->render('UsuariosBundle:Default:index.html.twig');
     }
+    /**
+     * @Route("/user", name="user")
+     */
+    public function userAction()
+    {
+      // whatever *your* User object is
+      $user = new usuarios();
+      $plainPassword = '1234';
+      $encoder = $this->container->get('security.password_encoder');
+      $encoded = $encoder->encodePassword($user, $plainPassword);
+
+      $user->setPassword($encoded);
+      $user->setUserName("admin");
+      $roles = ["ROLE_ADMIN"];
+      $user->setRoles($roles);
+      $user->setEmail("Cataj@gmail.com");
+
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($user);
+      $em->flush();
+      return $this->render('usuariosBundle:Carpeta_User:usuario.html.twig');
+    }
 
     /**
      * @Route("/login", name="user_login")
@@ -63,6 +85,8 @@ class usuariosController extends Controller
                $usuario->setPassword($password);
 
                // 4) save the User!
+               $roles = ["ROLE_ADMIN"];
+               $usuario->setRoles($roles);
                $DB = $this->getDoctrine()->getManager();
                $DB->persist($usuario);
                $DB->flush();

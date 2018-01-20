@@ -35,6 +35,13 @@ class usuarios implements UserInterface
     /**
      * @var string
      *
+     * @ORM\Column(name="roles", type="json_array")
+     */
+    private $roles = array();
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="password", type="string", length=64)
      */
     private $password;
@@ -63,6 +70,20 @@ class usuarios implements UserInterface
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+    * Set roles
+    *
+    * @param string $roles
+    *
+    * @return Usuario
+    */
+    public function setRoles(array $roles)
+    {
+        $this->roles = $roles;
+        // allows for chaining
+        return $this;
     }
 
     /**
@@ -155,9 +176,9 @@ class usuarios implements UserInterface
     }
 
     public function getRoles()
-    {
-      return array('ROLE_USER');
-    }
+     {
+        return $this->roles;
+     }
 
     public function eraseCredentials()
     {
