@@ -11,13 +11,13 @@
 
   <h3>Integrantes:</h3>
 {% for filaJugador in TablainfoEquipos.jugador %}
-
+ {{ filaJugador.nombre }}
 
   <div class="gallery">
       <img src="" alt="Mntains" width="600" height="400">
     <div class="desc">
-      <h3>Nombre: {{ filaJugador.nombre }}</h3>
-      <h5>Apellidos:{{ filaJugador.nombre }}</h5>
+      <h3>Nombre:</h3>
+      <h5>Apellidos:</h5>
       <h5>Especialidad: Support</h5>
     </div>
   </div>

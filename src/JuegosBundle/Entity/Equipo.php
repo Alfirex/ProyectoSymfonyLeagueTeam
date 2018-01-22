@@ -233,4 +233,8 @@ class Equipo
     {
         return $this->jugador;
     }
+    public function __toString()
+    {
+        return $this->nombre;
+    }
 }

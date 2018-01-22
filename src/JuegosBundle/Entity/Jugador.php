@@ -24,6 +24,13 @@ class Jugador
     /**
      * @var string
      *
+     * @ORM\Column(name="usuario", type="string", length=255)
+     */
+    private $usuario;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="nombre", type="string", length=255)
      */
     private $nombre;
@@ -232,5 +239,33 @@ class Jugador
     public function getEquipo()
     {
         return $this->equipo;
+    }
+
+    /**
+     * Set usuario
+     *
+     * @param string $usuario
+     *
+     * @return Jugador
+     */
+    public function setUsuario($usuario)
+    {
+        $this->usuario = $usuario;
+
+        return $this;
+    }
+
+    /**
+     * Get usuario
+     *
+     * @return string
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+    public function __toString()
+    {
+        return $this->nombre;
     }
 }

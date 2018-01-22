@@ -1,3 +1,4 @@
+# Default
 juegos_homepage:
     path:     /
     defaults: { _controller: JuegosBundle:Default:index }
@@ -5,10 +6,27 @@ juegos_ListarEquipos:
     path:     /Listar_Equipos
     defaults: { _controller: JuegosBundle:Default:ListarEquipos }
 
-
+# Equipos
 Equipo_todosLosEquipos:
     path:     /Equipos
     defaults: { _controller: JuegosBundle:Equipo:todosLosEquipos }
 Equipo_infoequipo:
     path:     /Equipos/infoequipo/{id}
     defaults: { _controller: JuegosBundle:Equipo:infoequipo }
+Equipo_Crear:
+    path:     /CUD/Equipos/crear
+    defaults: { _controller: JuegosBundle:Equipo:crearEquipo }
+Equipo_Actualizar:
+    path:     /CUD/Equipos/actualizar/{id}
+    defaults: { _controller: JuegosBundle:Equipo:actualizarEquipo }
+Equipo_Eliminar:
+    path:     /CUD/Equipos/eliminar/{id}
+    defaults: { _controller: JuegosBundle:Equipo:eliminarEquipo }
+
+# Jugador
+Jugador_todosLosJugadores:
+    path:     /CUD/Jugadores
+    defaults: { _controller: JuegosBundle:Jugador:todosLosJugadores }
+Jugador_Crear:
+    path:     /CUD/Jugadores/crear
+    defaults: { _controller: JuegosBundle:Jugador:crearJugador }

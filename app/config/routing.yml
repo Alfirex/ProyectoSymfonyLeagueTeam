@@ -1,3 +1,8 @@
+usuarios:
+    resource: "@UsuariosBundle/Controller/"
+    type:     annotation
+    prefix:   /usuarios
+
 juegos:
     resource: "@JuegosBundle/Resources/config/routing.yml"
     prefix:   /
@@ -5,3 +10,6 @@ juegos:
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+logout:
+    path: /usuarios/logout

@@ -24,6 +24,13 @@ class Jugador
     /**
      * @var string
      *
+     * @ORM\Column(name="usuario", type="string", length=255)
+     */
+    private $usuario;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="nombre", type="string", length=255)
      */
     private $nombre;
@@ -191,5 +198,46 @@ class Jugador
     public function getEdad()
     {
         return $this->edad;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->equipo = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add equipo
+     *
+     * @param \JuegosBundle\Entity\Equipo $equipo
+     *
+     * @return Jugador
+     */
+    public function addEquipo(\JuegosBundle\Entity\Equipo $equipo)
+    {
+        $this->equipo[] = $equipo;
+
+        return $this;
+    }
+
+    /**
+     * Remove equipo
+     *
+     * @param \JuegosBundle\Entity\Equipo $equipo
+     */
+    public function removeEquipo(\JuegosBundle\Entity\Equipo $equipo)
+    {
+        $this->equipo->removeElement($equipo);
+    }
+
+    /**
+     * Get equipo
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEquipo()
+    {
+        return $this->equipo;
     }
 }
