@@ -1,0 +1,13 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    {% for fila in Tablausuarios %}
+     {{ fila.username }}
+      {{ fila.email }}
+        <a href="{{ path('eliminar_Usuario', {'id': fila.id  }) }}" class="btn btn-primary">Eliminar</a>
+        <a href="{{ path('actualizar_Usuarios', {'id': fila.id  }) }}" class="btn btn-primary">Actualizar</a>
+        <!-- Tienes dos formas o cambiar el Rol aqui o dentro del formulario por el enlace, que te envia al mismo lugar -->
+        <a href="{{ path('role_user', {'id': fila.id  }) }}" class="btn btn-primary">Cambia su Rol</a>
+      <hr>
+
+  {% endfor %}
+{% endblock %}
