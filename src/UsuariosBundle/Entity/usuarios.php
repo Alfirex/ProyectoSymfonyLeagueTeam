@@ -28,7 +28,6 @@ class usuarios implements UserInterface
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=255)
-     * @Assert\NotBlank()
      */
     private $username;
 
@@ -50,13 +49,11 @@ class usuarios implements UserInterface
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=512)
-     * @Assert\NotBlank()
      * @Assert\Email()
      */
     private $email;
 
     /**
-     * @Assert\NotBlank()
      * @Assert\Length(max=4096)
      */
     private $plainPassword;
